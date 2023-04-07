@@ -4,9 +4,11 @@ import UserForm from '@/components/UserForm.vue';
 </script>
 
 <template>
-  <v-container>
-    <UserForm />
-  </v-container>
+  <v-app>
+    <v-container>
+      <UserForm />
+    </v-container>
+  </v-app>
 </template>
 
 <style scoped>

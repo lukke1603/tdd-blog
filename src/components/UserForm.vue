@@ -1,5 +1,23 @@
 <script setup lang="ts">
+import type User from '@/types/User';
+import { ref } from 'vue';
 
+
+const emit = defineEmits<{
+  (event: 'save'): void
+}>();
+
+const userModel = ref<User>({
+  firstname: '',
+  lastname: '',
+  nickname: '',
+  dob: '',
+  email: '',
+});
+
+function onSave() {
+  emit('save');
+}
 </script>
 
 <template>
@@ -23,7 +41,7 @@
       </v-col>
     </v-row>
     
-    <v-btn color="primary" v-test="'user-save-btn'">Speichern</v-btn>
+    <v-btn color="primary" v-test="'user-save-btn'" @click="onSave">Speichern</v-btn>
   </v-form>
 </template>
 
